@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "90328e21-118a-4929-b8ff-d1808a3860cc",
+		"name": "Test_Odoo_RPC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "46497806",
+		"_collection_link": "https://sawlwinoo.postman.co/workspace/Saw-Lwin-Oo's-Workspace~2b4a1169-a1db-4886-82bd-acd1dd6e71af/collection/46497806-90328e21-118a-4929-b8ff-d1808a3860cc?action=share&source=collection_link&creator=46497806"
+	},
+	"item": [
+		{
+			"name": "product category",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"limit\": 0,\n        \"offset\": 0,\n        \"order\": \"sequence ASC\",\n        \"domain\": [],\n        \"fields\": [\n            \"sequence\",\n            \"display_name\",\n            \"website_id\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/product/category"
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"category_id\": 2,\n        \"fields\": [\n            \"image_1920\",\n            \"name\",\n            \"parent_id\",\n            \"website_id\",\n            \"sequence\",\n            \"display_name\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/product/category/detail"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"params\":{\n        \"login\":\"admin\",\n        \"password\":\"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\":{\n        \"name\": \"\",\n        \"email\":\"\",\n        \"password\": \"\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/signup"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product template",
+			"item": [
+				{
+					"name": "product product",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"offset\": 0,\n        \"limit\": 0,\n        \"order\": \"sequence ASC\",\n        \"domain\": [],\n        \"fields\": [\n            // \"id\",\n            // \"name\"\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/api/product"
+							},
+							"response": []
+						},
+						{
+							"name": "detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"product_id\": 8,\n        \"fields\": [\n            // \"id\",\n            // \"name\"\n           \n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/api/product/detail"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"limit\": 80,\n        \"offset\": 0,\n        \"order\": \"sequence ASC\",\n        \"domain\": [[\"public_categ_ids\",\"=\", 1]],\n        \"fields\": [\n            //     \"sequence\",\n            \"display_name\",\n            \"categ_id\",\n            \"public_categ_ids\"\n            // ,\n            //     \"website_id\"\n        ]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/product/template"
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"product_template_id\": 1,\n        \"fields\":[\n            // \"id\",\n            // \"name\"\n            \n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/api/product/template/detail"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale Order",
+			"item": [
+				{
+					"name": "Order List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"model\": \"sale.order\",\n        \"method\": \"web_search_read\",\n        \"args\": [],\n        \"kwargs\": {\n            \"limit\": 0,\n            \"offset\": 0,\n            \"order\": \"\",\n            \"count_limit\": 10001,\n            \"domain\": [[\"website_id\", \"!=\", false], [\"partner_id\", \"=\", \"filter with partner id /partner_id is int\" ]], \n            \"fields\": [\n            \n                \"name\",\n                \"date_order\",\n                \"expected_date\",\n                \"partner_id\",\n                \"amount_untaxed\",\n                \"amount_tax\",\n                \"amount_total\",\n                \"currency_id\",\n                \"invoice_status\",\n                \"state\"\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/web/dataset/call_kw/sale.order/web_search_read"
+					},
+					"response": []
+				},
+				{
+					"name": "Order Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"model\": \"sale.order\",\n        \"method\": \"read\",\n        \"args\": [43], // order id\n        \"kwargs\": {\n            \"fields\": [\n                \"state\",\n                \"invoice_count\",\n                \"name\",\n                \"partner_id\",\n                \"validity_date\",\n                \"date_order\",\n                \"show_update_pricelist\",\n                \"currency_id\",\n                \"tax_country_id\",\n                \"order_line\",\n                \"note\",\n                \"tax_totals\",\n                \"reference\",\n                \"invoice_status\"\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/web/dataset/call_kw/sale.order/read"
+					},
+					"response": []
+				},
+				{
+					"name": "order line",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"model\": \"sale.order.line\",\n        \"method\": \"read\",\n        \"args\": [\n            43\n        ], // order line id\n        \"kwargs\": {\n            \"fields\": [\n                \"name\",\n                \"product_uom_qty\",\n                \"qty_delivered\",\n                \"qty_delivered_method\",\n                \"qty_invoiced\",\n                \"qty_to_invoice\",\n                \"product_uom\",\n                \"customer_lead\",\n                \"price_unit\",\n                \"tax_id\",\n                \"price_tax\",\n                \"price_subtotal\",\n                \"invoice_status\"\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/web/dataset/call_kw/sale.order.line/read"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "Country",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"model\": \"res.country\",\n        \"method\": \"web_search_read\",\n        \"args\": [],\n        \"kwargs\": {\n            \"limit\": 0,\n            \"offset\": 0,\n            \"order\": \"\",\n            \n            \"domain\": [], \n            \"fields\": [\n            \n                // \"id\",\n                // \"name\"\n                \n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/web/dataset/call_kw/res.country/web_search_read"
+					},
+					"response": []
+				},
+				{
+					"name": "State",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"params\": {\n        \"model\": \"res.country.state\",\n        \"method\": \"web_search_read\",\n        \"args\": [],\n        \"kwargs\": {\n            \"limit\": 0,\n            \"offset\": 0,\n            \"order\": \"\",\n            \n            \"domain\": [[\"country_id\", \"=\", 31]],  //filter by country id\n            \"fields\": [\n            \n                // \"id\",\n                // \"name\"\n                \n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/web/dataset/call_kw/res.country.state/web_search_read"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
